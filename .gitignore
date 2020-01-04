@@ -1,0 +1,9 @@
+# gcc/g++
+*.o
+*.gch
+*.out
+
+# cmake
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt

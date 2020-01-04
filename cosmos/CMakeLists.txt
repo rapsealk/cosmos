@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(DEVS)
+SET(PROJECT_VERSION_MAJOR 0)
+SET(PROJECT_VERSION_MINOR 1)
+
+set (CMAKE_CXX_STANDARD 11)
+
+SET(CMAKE_C_COMPILER "g++")
+SET(CMAKE_CXX_COMPILER "g++")
+
+SET(GXX_STDLIB_FLAGS "-lstdc++")
+#ADD_COMPILE_OPTIONS(-lstdc++)
+#add_definitions(${GXX_STDLIB_FLAGS})
+#SET (CMAKE_CXX_FLAGS "${GXX_STDLIB_FLAGS}")
+
+SET(MODEL model.h model.cc)
+
+ADD_EXECUTABLE(main.out main.cc ${MODEL})
