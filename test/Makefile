@@ -10,5 +10,8 @@ All: main
 main: function_as_parameter.cc
 	$(CC) function_as_parameter.cc $(CFLAGS)
 
+infinite: infinite.cc
+	$(CC) -o infinite.o infinite.cc $(CFLAGS)
+
 clean:
 	rm *.o

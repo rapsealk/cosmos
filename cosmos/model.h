@@ -2,13 +2,14 @@
 #define _COSMOS_MODEL_H
 
 #include <set>
+#include <vector>
 
 namespace cosmos {
 
 /**
  * DEVS Atomic Model: 3S4F
  */
-class Model {
+class AtomicModel {
 private:
     std::set<int> x_;   // In-Events set
     std::set<int> y_;   // Out-Events set
@@ -33,14 +34,25 @@ private:
      */
     //void (*external_transition_)();
 public:
-    Model();
-    ~Model();
+    AtomicModel();
+    ~AtomicModel();
 
+    double ta;
     //double TimeAdvance();
     //void SetInternalTransition(void itf());
     //void TriggerInternalTransition();
-};
+};  // class AtomicModel
 
-}
+class CoupledModel {
+private:
+    std::vector<AtomicModel*> m_;
+    int (*select_)();
+
+public:
+    CoupledModel();
+    ~CoupledModel();
+};  // class CoupledModel
+
+}   // namespace cosmos
 
 #endif  // _COSMOS_MODEL_H
